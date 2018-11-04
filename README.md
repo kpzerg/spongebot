@@ -8,3 +8,5 @@ I should mention that this project was not made in any sort of mean-spirited con
 Run `npm install` and update the `auth.json` file with the appropriate Discord token in both the client and server folders. Also, change the `target_user` field in `client/bot.js` to the name of the user you want to target.
 
 The server bot should be added to the primary server while the client should go on the secondary one. Instructions for setting up a Discord bot can be found [here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token).
+
+The server and client are set up to be run on one machine (they contact eachother through a socket over loopback), but this could be changed by adjusting the `hostname` parameters at the top of each `bot.js` file.
