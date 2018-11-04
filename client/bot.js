@@ -1,14 +1,6 @@
 var Discord = require('discord.io');
 var auth = require('./auth.json');
 var net = require('net')
-var mongo = require('mongodb').MongoClient;
-
-var url = "./botdb";
-MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    console.log("Database created");
-    db.close();
-});
 
 const hostname = '127.0.0.1';
 const port = 3000;
