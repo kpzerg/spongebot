@@ -4,6 +4,7 @@ var net = require('net')
 
 const hostname = '127.0.0.1';
 const port = 3000;
+const target_user = 'kpzerg';
 
 var socket = new net.Socket();
 socket.connect(port, hostname, function() {
@@ -20,7 +21,7 @@ socket.on("data", function (data) {
     message = data.response;
     user = data.user;
 
-    if (user == 'kpzerg') {
+    if (user == target_user) {
         spongebob_message = '';
         for (var i = 0; i < message.length; i++) {
             if (Math.random() > 0.5) {
