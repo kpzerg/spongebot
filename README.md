@@ -9,4 +9,4 @@ Run `npm install` and update the `auth.json` file with the appropriate Discord t
 
 The server bot should be added to the primary server while the client should go on the secondary one. Instructions for setting up a Discord bot can be found [here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token).
 
-The server and client are set up to be run on one machine (they contact eachother through sockets over loopback), but this could be changed by adjusting the `hostname` parameters at the top of each `bot.js` file.
+The server and client are set up to be run on one machine (they contact each other through sockets over loopback), but this could be changed by adjusting the `hostname` parameters at the top of each `bot.js` file.
