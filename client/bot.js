@@ -57,7 +57,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         command_arg = message.slice(1).trim().split(' ');
         bot.sendMessage({
             to: channelID,
-            message: process_command_arg(command_args[0], command_args[1]);
+            message: process_command_arg(command_args[0], command_args[1])
         });
     }
 });
