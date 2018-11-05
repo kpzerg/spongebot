@@ -3,7 +3,7 @@ var auth = require('./auth.json');
 var net = require('net');
 
 const hostname = '127.0.0.1';
-const port = 2345;
+const port = 3000;
 
 var bot = new Discord.Client({
     token: auth.token,
@@ -22,8 +22,8 @@ var server = net.createServer(function (conn) {
     bot.on('message', function (user, userID, channelID, message, evt) {
         console.log(message)
         conn.write(JSON.stringify({ response: message , user: user}))
-       
-    });    
+
+    });
 });
 
 server.listen(port, hostname, () => {
