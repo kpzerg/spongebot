@@ -30,7 +30,7 @@ socket.on('data', function (data) {
 
     if (user == target_user) {
         spongebob_message = spongify(message);
-        log_v(("message %s>%s" % message, spongebob_message))
+        log_v(("message %s>%s" message, spongebob_message))
 
         for (var key in bot.channels) {
             if (bot.channels[key].name == 'general') {
@@ -58,7 +58,7 @@ function spongify(message) {
 }
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    log_v(("processing message %s from user %s" % (message, user)))
+    log_v(("processing message %s from user %s", message, user))
     if (message[0]=='!') {
         command_args = message.slice(1).trim().split('=');
         bot.sendMessage({
@@ -72,7 +72,7 @@ function process_command_arg(command, arg) {
     switch(command) {
     case "target_user":
         target_user = arg;
-        return "target user set to %s" % arg
+        return "target user set to %s", arg
         break;
     }
 }
