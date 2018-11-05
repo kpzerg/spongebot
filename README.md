@@ -12,3 +12,7 @@ The server bot should be added to the primary server while the client should go 
 The server and client are set up to be run on one machine (they contact each other through sockets over loopback), but this could be changed by adjusting the `hostname` parameters at the top of each `bot.js` file.
 
 At this time, additional features are being implemented for the specific place this is being used, but a generic version (with only the sPonGeBoB feature) is available on the branch spongebot_pure.
+
+## development
+
+There is a script on the aws server hosting this that automatically applies changes to master to the live version of the bot, so DO NOT push to master without running on a testing server first.
