@@ -72,7 +72,6 @@ function process_command_arg(command, arg) {
     switch(command) {
     case "target_user":
         target_user = arg;
-        return "target user set to %s", arg
-        break;
+        return "target user set to "+arg;
     }
 }
