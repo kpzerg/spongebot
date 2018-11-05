@@ -30,7 +30,7 @@ socket.on('data', function (data) {
 
     if (user == target_user) {
         spongebob_message = spongify(message);
-        log_v("message %s>%s" % message, spongebob_message)
+        log_v(("message %s>%s" % message, spongebob_message))
 
         for (var key in bot.channels) {
             if (bot.channels[key].name == 'general') {

@@ -27,7 +27,7 @@ var server = net.createServer(function (conn) {
     });
 
     bot.on('message', function (user, userID, channelID, message, evt) {
-        log_v("sending message %s" % message)
+        log_v(("sending message %s" % message))
         conn.write(JSON.stringify({ response: message , user: user}))
        
     });    
