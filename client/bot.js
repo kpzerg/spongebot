@@ -1,13 +1,17 @@
 var Discord = require('discord.io');
 var auth = require('./auth.json');
 var net = require('net');
-var logger = require('../log_verbose.js');
 
 const hostname = '127.0.0.1';
-
 const port = 2345;
 var target_user = 'kpzerg';
 
+function log_v(message) {
+    var dt = new Date();
+    var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getdate();
+    var time = dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
+    console.log(date+' '+time+' server: '+message);
+}
 
 var socket = new net.Socket();
 socket.connect(port, hostname, function (conn) {
