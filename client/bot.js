@@ -62,7 +62,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     }
 });
 
-function process_command_args(command, arg) { 
+function process_command_arg(command, arg) { 
     switch(command) {
     case "target_user":
         target_user = arg;
