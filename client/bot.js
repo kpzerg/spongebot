@@ -55,7 +55,10 @@ function spongify(message) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     if (message[0]=='!') {
         command_arg = message.slice(1).trim().split(' ');
-        process_command_arg(command_args[0], command_args[1]);
+        bot.sendMessage({
+            to: channelID,
+            message: process_command_arg(command_args[0], command_args[1]);
+        });
     }
 });
 
@@ -63,6 +66,7 @@ function process_command_args(command, arg) {
     switch(command) {
     case "target_user":
         target_user = arg;
+        return "target user set to %s" % arg
         break;
     }
 }
