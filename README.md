@@ -15,4 +15,4 @@ At this time, additional features are being implemented for the specific place t
 
 ## development
 
-There is a script on the aws server hosting this that applies changes to the master branch to the live version of the bot about 5 minutes after they happen, so DO NOT push to master without running on a testing server first. Make a branch and pull request.
+There is a script on the aws server hosting this that applies changes to the master branch to the live version of the bot about 5 minutes after they happen, so DO NOT push to master without running on a testing server first.
