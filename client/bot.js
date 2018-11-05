@@ -8,14 +8,14 @@ var target_user = 'kpzerg';
 
 function log_v(message) {
     var dt = new Date();
-    var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getdate();
+    var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
     var time = dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
     console.log(date+' '+time+' server: '+message);
 }
 
 var socket = new net.Socket();
 socket.connect(port, hostname, function (conn) {
-    logger.log_v("client: connected to server");
+    log_v("client: connected to server");
 });
 
 var bot = new Discord.Client({
@@ -30,7 +30,7 @@ socket.on("data", function (data) {
 
     if (user == target_user) {
         spongebob_message = spongify(message);
-        logger.log_v("client: message %s>%s" % message, spongebob_message)
+        log_v("client: message %s>%s" % message, spongebob_message)
 
         for (var key in bot.channels) {
             if (bot.channels[key].name == 'general') {
@@ -58,7 +58,7 @@ function spongify(message) {
 }
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    logger.log_v("processing message %s from user %s" % message, user)
+    log_v("processing message %s from user %s" % message, user)
     if (message[0]=='!') {
         command_args = message.slice(1).trim().split('=');
         bot.sendMessage({
