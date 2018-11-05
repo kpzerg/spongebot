@@ -10,7 +10,7 @@ function log_v(message) {
     var dt = new Date();
     var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
     var time = dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
-    console.log(date+' '+time+' server: '+message);
+    console.log(date+' '+time+' client: '+message);
 }
 
 var socket = new net.Socket();
@@ -23,7 +23,7 @@ var bot = new Discord.Client({
     autorun: true
 });
 
-socket.on("data", function (data) {
+socket.on('data', function (data) {
     data = JSON.parse(data);
     message = data.response;
     user = data.user;
