@@ -15,7 +15,7 @@ function log_v(message) {
 
 var socket = new net.Socket();
 socket.connect(port, hostname, function (conn) {
-    log_v("client: connected to server");
+    log_v("connected to server");
 });
 
 var bot = new Discord.Client({
@@ -30,7 +30,7 @@ socket.on('data', function (data) {
 
     if (user == target_user) {
         spongebob_message = spongify(message);
-        log_v("client: message %s>%s" % message, spongebob_message)
+        log_v("message %s>%s" % message, spongebob_message)
 
         for (var key in bot.channels) {
             if (bot.channels[key].name == 'general') {
