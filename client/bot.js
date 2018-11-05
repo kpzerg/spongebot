@@ -58,7 +58,7 @@ function spongify(message) {
 }
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    log_v(("processing message %s from user %s" % message, user))
+    log_v(("processing message %s from user %s" % (message, user)))
     if (message[0]=='!') {
         command_args = message.slice(1).trim().split('=');
         bot.sendMessage({

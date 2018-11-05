@@ -34,5 +34,5 @@ var server = net.createServer(function (conn) {
 });
 
 server.listen(port, hostname, () => {
-    log_v(("listening at %s:%s" % hostname, port));
+    log_v(("listening at %s:%s" % (hostname, port)));
 });
