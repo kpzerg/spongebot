@@ -27,12 +27,12 @@ var server = net.createServer(function (conn) {
     });
 
     bot.on('message', function (user, userID, channelID, message, evt) {
-        log_v(("sending message %s", message))
+        log_v('sending message '+message)
         conn.write(JSON.stringify({ response: message , user: user}))
        
     });    
 });
 
 server.listen(port, hostname, () => {
-    log_v(("listening at %s:%s", hostname, port));
+    log_v('listening at '+hostname+':'+port);
 });
