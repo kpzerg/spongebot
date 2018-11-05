@@ -11,21 +11,21 @@ var bot = new Discord.Client({
 });
 
 var server = net.createServer(function (conn) {
-    console.log("Server: Client connected");
+    console.log("server: client connected");
 
-    conn.on('end', function () {
-        console.log("Server: Client disconnected");
+    conn.on('end', () => {
+        console.log("server: client disconnected");
         server.close();
         process.exit(0);
     });
 
     bot.on('message', function (user, userID, channelID, message, evt) {
-        console.log(message)
+        console.log("server: sending message %s" % message)
         conn.write(JSON.stringify({ response: message , user: user}))
        
     });    
 });
 
 server.listen(port, hostname, () => {
-    console.log("Server running at %s:%s", hostname, port);
+    console.log("server: listening at %s:%s", hostname, port);
 });
