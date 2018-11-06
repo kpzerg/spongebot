@@ -35,11 +35,10 @@ var server = net.createServer(function (conn) {
             command_args = message.slice(1).replace(/\s/g,'').split('=');
             process_command_arg(command_args[0], command_args[1]);
         }
+        var ran = Math.floor(Math.random() * 7);
         if(message.toLowerCase().includes("pikachu"))
         {
           var pikachu_kaomoji;
-          var ran = Math.floor(Math.random() * 7);
-          console.log(ran);
           switch(ran)
           {
             case 0:
@@ -72,6 +71,29 @@ var server = net.createServer(function (conn) {
               message: pikachu_kaomoji
           });
         }
+
+        if(message.toLowerCase().includes("rosalina"))
+        {
+          bot.sendMessage({
+              to: channelID,
+              message: "☆"
+          });
+        }
+        if(message.toLowerCase().includes("better nerf"))
+        {
+          bot.sendMessage({
+              to: channelID,
+              message: "greninja"
+          });
+        }
+        if(message.toLowerCase().includes("fox"))
+        {
+          bot.sendMessage({
+              to: channelID,
+              message: "mcloud"
+          });
+        }
+
     });
 });
 
