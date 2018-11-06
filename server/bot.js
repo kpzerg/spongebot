@@ -3,7 +3,7 @@ var auth = require('./auth.json');
 var net = require('net');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 2345;
 
 function log_v(message) {
     var dt = new Date();
