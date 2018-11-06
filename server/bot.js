@@ -110,6 +110,12 @@ function process_command_arg(command, arg) {
                 message: '```-!help for this message.\n-the bot will respond to any sentence with pikachu, including this\n-more upcoming features.```'
             });
             break;
+        case 'tierlist':
+            bot.sendMessage({
+                to: cid,
+                message: '**S+: Piranha Plant**'
+            });
+            break;
         default:
             bot.sendMessage({
                 to: cid,
