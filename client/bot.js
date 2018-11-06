@@ -85,6 +85,7 @@ function process_command_arg(command, arg) {
                 to: gen_id,
                 message: '```Target user set to '+target_user+'```'
             });
+            break;
         default:
             bot.sendMessage({
                 to: gen_id,
