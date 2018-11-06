@@ -3,9 +3,8 @@ var auth = require('./auth.json');
 var net = require('net');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 2345;
 var target_user = 'kpzerg';
-
 var gen_id;
 
 function log_v(message) {
@@ -24,7 +23,7 @@ socket.connect(port, hostname, function (conn) {
               gen_id = bot.channels[key].id;
           }
       }
-    }, 1000);
+    }, 3000);
 });
 
 var bot = new Discord.Client({
@@ -41,12 +40,6 @@ socket.on('data', function (data) {
     if (user == target_user) {
         spongebob_message = spongify(message);
         log_v('message: '+message+'>'+spongebob_message)
-        for (var key in bot.channels) {
-            if (bot.channels[key].name == 'general') {
-                gen_id = bot.channels[key].id;
-            }
-        }
-
         bot.sendMessage({
             to: gen_id,
             message: user+": "+spongebob_message
@@ -67,7 +60,6 @@ function spongify(message) {
 }
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-
     if (user == 'spongebot') {
         return;
     }

@@ -5,27 +5,34 @@ var net = require('net');
 const hostname = '127.0.0.1';
 const port = 3000;
 
+function log_v(message) {
+    var dt = new Date();
+    var date = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
+    var time = dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
+    console.log(date+' '+time+' server: '+message);
+}
+
 var bot = new Discord.Client({
     token: auth.token,
     autorun: true
 });
 
 var server = net.createServer(function (conn) {
-    console.log("Server: Client connected");
+    log_v("client connected");
 
-    conn.on('end', function () {
-        console.log("Server: Client disconnected");
+    conn.on('end', () => {
+        log_v("client disconnected");
         server.close();
         process.exit(0);
     });
 
     bot.on('message', function (user, userID, channelID, message, evt) {
-        console.log(message)
+        log_v('sending message '+message)
         conn.write(JSON.stringify({ response: message , user: user}))
 
     });
 });
 
 server.listen(port, hostname, () => {
-    console.log("Server running at %s:%s", hostname, port);
+    log_v('listening at '+hostname+':'+port);
 });
