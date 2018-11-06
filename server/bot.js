@@ -3,7 +3,7 @@ var auth = require('./auth.json');
 var net = require('net');
 
 const hostname = '127.0.0.1';
-const port = 2345;
+const port = 3000;
 
 function log_v(message) {
     var dt = new Date();
@@ -29,8 +29,8 @@ var server = net.createServer(function (conn) {
     bot.on('message', function (user, userID, channelID, message, evt) {
         log_v('sending message '+message)
         conn.write(JSON.stringify({ response: message , user: user}))
-       
-    });    
+
+    });
 });
 
 server.listen(port, hostname, () => {
